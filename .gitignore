@@ -8,3 +8,12 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+/node_modules
+/public /yarn-error.log
+# used later by Cordova /app
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###

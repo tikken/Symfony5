@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome</title>
+        <link rel="stylesheet" href="{{ asset('build/global.css') }}"/>
+    </head>
+    <body>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+
+        <div id="app"></div>
+
+        {{ encore_entry_script_tags('app') }}
+    </body>
+</html>
