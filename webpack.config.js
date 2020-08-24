@@ -1,4 +1,5 @@
-var Encore = require('@symfony/webpack-encore');
+const Encore = require('@symfony/webpack-encore');
+const webpack = require('webpack');
 
 if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
@@ -25,10 +26,12 @@ Encore
 
     .enableReactPreset()
 
-    .configureBabelPresetEnv((config) => {
-        config.useBuiltIns = 'usage';
-        config.corejs = 3;
+    .configureBabel(function(babelConfig) {
+        babelConfig.plugins.push("@babel/plugin-syntax-jsx");
     })
 
+    .addPlugin(new webpack.DefinePlugin({
+        'ENV_API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT)
+    }))
 
 module.exports = Encore.getWebpackConfig();
