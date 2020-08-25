@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
+
+import AppointmentsDayView from '../js/components/Appointment';
+import { sampleAppointments } from '../js/sampleData/sampleData';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -16,6 +20,8 @@ function App() {
 
                 <Link to="/home">Home</Link>
                 <Link to="/admin">Admin</Link>
+
+                <AppointmentsDayView appointments={sampleAppointments} />
 
                 <Switch>
                     <Route path="/home">

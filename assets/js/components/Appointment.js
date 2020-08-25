@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 
 export const Appointment = ({customer}) => <div>{customer.firstName}</div>;
 
-export const AppointmentsDayView = ({appointments}) => {
-    const [selectedAppointment, setSelectedAppointment] = useState(
-        0
-    );
+function AppointmentsDayView({appointments}) {
+    const [selectedAppointment, setSelectedAppointment] = useState(0);
+
     return (
         <div id="appointmentsDayView">
             <ol>
@@ -19,10 +18,15 @@ export const AppointmentsDayView = ({appointments}) => {
                 {appointments.length === 0 ? (
                     <p>There are no appointments scheduled for today.</p>
                 ) : (
-                    <Appointment {...appointments[selectedAppointment]} />
+                   <div>
+                       <br/>
+                       <Appointment {...appointments[selectedAppointment]} />
+                   </div>
                 )}
 
             </ol>
         </div>
     );
 };
+
+export default AppointmentsDayView;
