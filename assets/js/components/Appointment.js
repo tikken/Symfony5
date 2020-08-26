@@ -29,4 +29,4 @@ function AppointmentsDayView({appointments}) {
     );
 };
 
-export default AppointmentsDayView;
+export {AppointmentsDayView};
