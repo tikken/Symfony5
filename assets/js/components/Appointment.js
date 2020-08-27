@@ -1,32 +1,3 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 export const Appointment = ({customer}) => <div>{customer.firstName}</div>;
-
-function AppointmentsDayView({appointments}) {
-    const [selectedAppointment, setSelectedAppointment] = useState(0);
-
-    return (
-        <div id="appointmentsDayView">
-            <ol>
-                {appointments.map((appointment,i) => (
-                    <li key={appointment.startsAt}>
-                        <button type="button" onClick={() => setSelectedAppointment(i)}>
-                            {appointment.startsAt}
-                        </button>
-                    </li>))}
-
-                {appointments.length === 0 ? (
-                    <p>There are no appointments scheduled for today.</p>
-                ) : (
-                   <div>
-                       <br/>
-                       <Appointment {...appointments[selectedAppointment]} />
-                   </div>
-                )}
-
-            </ol>
-        </div>
-    );
-};
-
-export {AppointmentsDayView};

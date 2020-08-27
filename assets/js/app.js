@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AppointmentsDayView from '../js/components/Appointment';
-import { sampleAppointments } from '../js/sampleData/sampleData';
+import AppointmentsDayView from './components/AppointmentsDayView';
+import { sampleAppointments } from './sampleData/sampleData';
 
 import {
     BrowserRouter as Router,
