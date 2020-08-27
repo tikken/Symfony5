@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Appointment} from './Appointment';
+import Appointment from './Appointment';
 
 function AppointmentsDayView({appointments}) {
     const [selectedAppointment, setSelectedAppointment] = useState(0);

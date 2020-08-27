@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-    Appointment,
-    AppointmentsDayView
-} from "../js/components/Appointment";
+import AppointmentsDayView from '../js/components/AppointmentsDayView';
+import Appointment from '../js/components/Appointment';
+
 import ReactTestUtils from 'react-dom/test-utils';
 
 describe('Appointment', () => {
@@ -29,15 +28,15 @@ describe('Appointment', () => {
     ];
 
     it('renders the customer first name', () => {
-       customer = { firstName: 'Ashley' };
-       render(<Appointment customer={customer} />);
-       expect(container.textContent).toMatch('Ashley');
+        customer = { firstName: 'Ashley' };
+        render(<Appointment customer={customer} />);
+        expect(container.textContent).toMatch('Ashley');
     });
 
     it('renders another customer first name', () => {
-       customer = { firstName: 'Jordan' };
-       render(<Appointment customer={customer} />)
-       expect(container.textContent).toMatch('Jordan');
+        customer = { firstName: 'Jordan' };
+        render(<Appointment customer={customer} />)
+        expect(container.textContent).toMatch('Jordan');
     });
 
     it('renders a div with the right id', () => {
@@ -77,5 +76,3 @@ describe('Appointment', () => {
         expect(container.textContent).toMatch('Jordan');
     });
 });
-
-
