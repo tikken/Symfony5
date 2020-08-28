@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AppointmentsDayView from './components/AppointmentsDayView';
+import AppointmentForm from './components/AppointmentForm';
 import { sampleAppointments } from './sampleData/sampleData';
 
 import {
@@ -22,6 +23,8 @@ function App() {
                 <Link to="/admin">Admin</Link>
 
                 <AppointmentsDayView appointments={sampleAppointments} />
+
+                <AppointmentForm />
 
                 <Switch>
                     <Route path="/home">
