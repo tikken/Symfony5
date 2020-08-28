@@ -1,10 +1,18 @@
 import React from 'react';
 
-function AppointmentForm ({customer}) {
+function AppointmentForm ({ selectableServices, service }) {
     return (
         <form id="appointment">
-            <select name="service">
-                <option>Test</option>
+            <select
+                value={service}
+                name="service"
+                readOnly>
+
+                <option/>
+
+                {selectableServices.map(s => (
+                    <option key={s}>{s}</option>
+                ))}
             </select>
         </form>
     );

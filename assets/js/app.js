@@ -15,6 +15,15 @@ import Home from './pages/home'
 import Admin from './pages/admin'
 
 function App() {
+    const selectableServices = [
+        'Cut',
+        'Blow-dry',
+        'Cut & color',
+        'Beard trim',
+        'Cut & beard trim',
+        'Extensions'
+    ];
+
     return (
         <Router>
             <div className="row">
@@ -24,7 +33,7 @@ function App() {
 
                 <AppointmentsDayView appointments={sampleAppointments} />
 
-                <AppointmentForm />
+                <AppointmentForm selectableServices={selectableServices} />
 
                 <Switch>
                     <Route path="/home">
